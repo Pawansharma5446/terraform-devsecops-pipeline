@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "4.57.0"
     }
   }
@@ -14,11 +14,11 @@ provider "azurerm" {
 }
 
 locals {
-  resource_group_name= "todoapprg"
-  location="West Europe"
-  vnet_name="todoappvnet"
-  subnet1_name="frontend_subnet"
-  subnet2_name="backend_subnet"
+  resource_group_name = "todoapprg"
+  location            = "West Europe"
+  vnet_name           = "todoappvnet"
+  subnet1_name        = "frontend_subnet"
+  subnet2_name        = "backend_subnet"
 
 }
 resource "azurerm_resource_group" "example" {
@@ -29,7 +29,7 @@ resource "azurerm_resource_group" "example" {
 resource "azurerm_virtual_network" "vnet" {
   name                = local.vnet_name
   resource_group_name = local.resource_group_name
-  location            = local.location 
+  location            = local.location
   address_space       = ["10.0.0.0/16"]
 }
 
@@ -44,10 +44,12 @@ resource "azurerm_subnet" "subnet2" {
   name                 = local.subnet2_name
   resource_group_name  = local.resource_group_name
   virtual_network_name = local.vnet_name
-  address_prefixes     = ["10.0.2.0/24"]    
-depends_on = [ azurerm_resource_group.example ]
+  address_prefixes     = ["10.0.2.0/24"]
+  depends_on           = [azurerm_resource_group.example]
 
 }
+
+
 
 
 

@@ -14,7 +14,7 @@ provider "azurerm" {
 }
 
 locals {
-  resource_group_name = "todoapprg"
+  resource_group_name = "todoapprg1"
   location            = "West Europe"
   vnet_name           = "todoappvnet"
   subnet1_name        = "frontend_subnet"

@@ -27,6 +27,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 resource "azurerm_virtual_network" "vnet" {
+  depends_on = [ azurerm_resource_group.example ]
   name                = local.vnet_name
   resource_group_name = local.resource_group_name
   location            = local.location

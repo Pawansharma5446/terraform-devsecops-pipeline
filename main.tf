@@ -18,7 +18,6 @@ locals {
   location            = "West Europe"
   vnet_name           = "todoappvnet"
   subnet1_name        = "frontend_subnet"
-  subnet2_name        = "backend_subnet"
 
 }
 resource "azurerm_resource_group" "example" {

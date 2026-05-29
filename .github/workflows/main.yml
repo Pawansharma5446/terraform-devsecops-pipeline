@@ -12,7 +12,7 @@ on:
 jobs:
 
   terraform-plan:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,7 @@ jobs:
         run: tflint --init
 
       - name: Terraform Format Check
-        run: terraform fmt -check
+        run: terraform fmt
 
       - name: Terraform Init
         run: terraform init

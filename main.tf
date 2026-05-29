@@ -1,4 +1,5 @@
 terraform {
+  required_version = ">= 1.0.0"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -46,6 +47,9 @@ resource "azurerm_subnet" "subnet1" {
 #   virtual_network_name = local.vnet_name
 #   address_prefixes     = ["10.0.2.0/24"]
 #   depends_on           = [azurerm_resource_group.example]
+#   address_prefixes     = ["10.0.2.0/24"]    
+#   depends_on = [ azurerm_resource_group.example ]
+
 # }
 
 

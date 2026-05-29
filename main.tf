@@ -40,14 +40,13 @@ resource "azurerm_subnet" "subnet1" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_subnet" "subnet2" {
-  name                 = local.subnet2_name
-  resource_group_name  = local.resource_group_name
-  virtual_network_name = local.vnet_name
-  address_prefixes     = ["10.0.2.0/24"]
-  depends_on           = [azurerm_resource_group.example]
-
-}
+# resource "azurerm_subnet" "subnet2" {
+#   name                 = local.subnet2_name
+#   resource_group_name  = local.resource_group_name
+#   virtual_network_name = local.vnet_name
+#   address_prefixes     = ["10.0.2.0/24"]
+#   depends_on           = [azurerm_resource_group.example]
+# }
 
 
 
